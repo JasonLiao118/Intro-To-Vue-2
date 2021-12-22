@@ -2,6 +2,9 @@
   <div class="home">
     <h1 v-if="graduated">{{ student }}</h1>
     <h1 v-else>"They did not yet graduate"</h1>
+    <ul>
+      <li v-for="animal in animals" :key="animal">{{ animal }}</li>
+    </ul>
   </div>
 </template>
 
@@ -15,6 +18,7 @@ export default {
     return {
       student: "Harry",
       graduated: true,
+      animals: ["Pig", "Horse", "Donkey", "Cow", "Duck"],
     };
   },
 };
