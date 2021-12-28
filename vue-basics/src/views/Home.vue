@@ -1,10 +1,11 @@
 <template>
   <div class="home">
-    <h1 v-if="graduated">{{ student }}</h1>
-    <h1 v-else>"They did not yet graduate"</h1>
-    <ul>
-      <li v-for="animal in animals" :key="animal">{{ animal }}</li>
-    </ul>
+    <select v-model="selected">
+      <option>A</option>
+      <option>B</option>
+      <option>C</option>
+    </select>
+    <span>{{ selected }}</span>
   </div>
 </template>
 
@@ -16,12 +17,14 @@ export default {
   components: {},
   data() {
     return {
-      student: "Harry",
-      graduated: true,
-      animals: ["Pig", "Horse", "Donkey", "Cow", "Duck"],
+      selected: "",
     };
   },
+  methods: {},
 };
 </script>
 <style>
+button {
+  font-size: 30px;
+}
 </style>
