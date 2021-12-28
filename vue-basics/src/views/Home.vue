@@ -1,30 +1,33 @@
 <template>
   <div class="home">
-    <select v-model="selected">
-      <option>A</option>
-      <option>B</option>
-      <option>C</option>
-    </select>
-    <span>{{ selected }}</span>
+    <Button @button-click="bye">Button One</Button>
+    <Button @button-click="hello">Button Two</Button>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-
+import Button from "../components/Button.vue";
 export default {
   name: "Home",
-  components: {},
+  components: {
+    Button,
+  },
   data() {
     return {
       selected: "",
     };
   },
-  methods: {},
+
+  methods: {
+    hello: function () {
+      console.log("hello");
+    },
+    bye: function () {
+      console.log("goodbye");
+    },
+  },
 };
 </script>
 <style>
-button {
-  font-size: 30px;
-}
 </style>
