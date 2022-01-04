@@ -1,8 +1,8 @@
 <template>
   <div class="card">
     <h2>{{ title }}</h2>
-    <img :src="image" alt="" />
-    <p>{{ description }}</p>
+    <img :src="getImage" alt="" />
+    <h3>{{ price }}</h3>
   </div>
 </template>
 
@@ -11,8 +11,13 @@ export default {
   name: "Card",
   props: {
     title: String,
-    description: String,
+    price: Number,
     image: String,
+  },
+  computed: {
+    getImage: function () {
+      return this.image;
+    },
   },
 };
 </script>
@@ -23,5 +28,8 @@ export default {
   background-color: red;
   height: 500px;
   margin: 10px auto;
+}
+img {
+  width: 100%;
 }
 </style>
