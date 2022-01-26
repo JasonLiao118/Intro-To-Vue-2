@@ -1,5 +1,7 @@
 <template>
   <div class="home">
+    <Button @click="bye">Button One</Button>
+       <Button @click="hello">Button Two</Button>
   </div>
 </template>
 
@@ -9,6 +11,7 @@ import Button from "../components/Button.vue";
 export default {
   name: "Home",
   components: {
+    Button,
   },
   data() {
     return {
@@ -18,17 +21,15 @@ export default {
 
 computed: {
   now: function(){
-    const time = new Date
-    return `${time.getHours}: ${time.getMinutes}` ;
   },
 },
 
   methods: {
     hello: function () {
-      console.log("hello");
+      alert("hello");
     },
     bye: function () {
-      console.log("goodbye");
+      alert("goodbye");
     },
   },
 };
